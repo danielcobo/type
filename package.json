@@ -1,0 +1,24 @@
+{
+  "name": "@danielcobo/type",
+  "version": "1.0.0",
+  "description": "Bulletproof type checking for JavaScript",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "jest --collectCoverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielcobo/type.git"
+  },
+  "keywords": [
+    "type",
+    "JavaScript",
+    "Node"
+  ],
+  "author": "Daniel Cobo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielcobo/type/issues"
+  },
+  "homepage": "https://github.com/danielcobo/type#readme"
+}
