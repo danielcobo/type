@@ -4,7 +4,8 @@
   "description": "Bulletproof type checking for JavaScript",
   "main": "./src/index.js",
   "scripts": {
-    "test": "jest --collectCoverage"
+    "test": "jest --collectCoverage",
+    "mutate": "npx stryker run"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/danielcobo/type/issues"
   },
-  "homepage": "https://github.com/danielcobo/type#readme"
+  "homepage": "https://github.com/danielcobo/type#readme",
+  "devDependencies": {
+    "@stryker-mutator/core": "^5.3.0",
+    "@stryker-mutator/jest-runner": "^5.3.0",
+    "jest": "^27.0.6"
+  }
 }
