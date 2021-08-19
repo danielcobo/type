@@ -1,32 +1,46 @@
-const type = {
+const genericTypes = [
+  'bigint',
+  'boolean',
+  'function',
+  'number',
+  'object',
+  'string',
+  'symbol',
+  'undefined',
+];
+
+const types = {
   arguments: require('./isArguments.js'),
   array: require('./isArray.js'),
   date: require('./isDate.js'),
+  float: require('./isFloat.js'),
+  integer: require('./isInteger.js'),
   NaN: require('./valueIsNaN.js'),
   null: require('./isNull'),
   regex: require('./isRegex.js'),
 };
 
-/**
- * Same as typeof but returns:
-- 'regex' for regular rexpression
-- 'array' for array 
-- 'null' for null, 
-- 'NaN' for NaN and
-- 'arguments' for arguments, the native JS object
- * @param {string} val 
- * @returns {string} input type
- */
-const valType = function valType(val) {
-  for (match in type) {
-    if (type[match](val)) {
-      return match;
-    }
-  }
-  return typeof val;
+const type = function (val) {
+  return {
+    val: val,
+    is: function (typeName) {
+      if (typeof typeName !== 'string') {
+        throw new Error(
+          'Invalid typeName argument. Expected: string Received: ' +
+            typeof typeName
+        );
+      }
+      if (genericTypes.includes(typeName)) {
+        return typeof this.val === typeName;
+      } else if (types[typeName]) {
+        return types[typeName](this.val);
+      } else {
+        throw new Error(
+          'Invalid typeName argument.' + typeName + ' is an unknown type name.'
+        );
+      }
+    },
+  };
 };
 
-valType.isFloat = require('./isFloat.js');
-valType.isInteger = require('./isInteger.js');
-
-module.exports = valType;
+module.exports = type;
