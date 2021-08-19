@@ -9,4 +9,7 @@ test('Test for float number', function () {
   expect(isFloat({})).toStrictEqual(false);
   expect(isFloat([])).toStrictEqual(false);
   expect(isFloat(function () {})).toStrictEqual(false);
+  expect(isFloat(null)).toStrictEqual(false);
+  expect(isFloat()).toStrictEqual(false);
+  expect(isFloat(undefined)).toStrictEqual(false);
 });

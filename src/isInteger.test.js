@@ -10,4 +10,7 @@ test('Test for integer number', function () {
   expect(isInteger({})).toStrictEqual(false);
   expect(isInteger([])).toStrictEqual(false);
   expect(isInteger(function () {})).toStrictEqual(false);
+  expect(isInteger(null)).toStrictEqual(false);
+  expect(isInteger()).toStrictEqual(false);
+  expect(isInteger(undefined)).toStrictEqual(false);
 });

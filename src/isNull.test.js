@@ -11,4 +11,6 @@ test('Test for null', function () {
   expect(isNull(1n)).toStrictEqual(false);
   expect(isNull([])).toStrictEqual(false);
   expect(isNull(function () {})).toStrictEqual(false);
+  expect(isNull()).toStrictEqual(false);
+  expect(isNull(undefined)).toStrictEqual(false);
 });

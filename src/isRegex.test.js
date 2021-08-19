@@ -8,4 +8,7 @@ test('Test for regex', function () {
   expect(isRegex(1n)).toStrictEqual(false);
   expect(isRegex([])).toStrictEqual(false);
   expect(isRegex(function () {})).toStrictEqual(false);
+  expect(isRegex(null)).toStrictEqual(false);
+  expect(isRegex()).toStrictEqual(false);
+  expect(isRegex(undefined)).toStrictEqual(false);
 });
