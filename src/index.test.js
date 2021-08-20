@@ -26,13 +26,39 @@ test('Test types NOT covered by typeof', function () {
   expect(typeOf(/regex/).is('regex')).toStrictEqual(true);
   expect(typeOf(1).is('integer')).toStrictEqual(true);
   expect(typeOf(0.1).is('float')).toStrictEqual(true);
+  expect(typeOf(1).is(['integer'])).toStrictEqual(true);
+});
+
+test('Test input is not the type', function () {
+  expect(typeOf('1').is('number')).toStrictEqual(false);
+  expect(typeOf('1').is(['number', 'bigint'])).toStrictEqual(false);
 });
 
 test('Test invalid typeName argument', function () {
   expect(function () {
     typeOf(arguments).is(1);
   }).toThrow();
+});
+
+test('Test name()', function () {
+  expect(typeOf('1').name()).toStrictEqual('string');
+  expect(typeOf(NaN).name()).toStrictEqual('NaN');
+});
+
+test('Test mustBe()', function () {
   expect(function () {
-    typeOf(arguments).is('perfection');
+    typeOf('1').mustBe(['random', 'string']);
+  }).not.toThrow();
+  expect(function () {
+    typeOf('1').mustBe(['number', 'bigint']);
   }).toThrow();
+});
+
+test('Test musNotBe()', function () {
+  expect(function () {
+    typeOf('1').mustNotBe(['random', 'string']);
+  }).toThrow();
+  expect(function () {
+    typeOf('1').mustNotBe(['number', 'bigint']);
+  }).not.toThrow();
 });
