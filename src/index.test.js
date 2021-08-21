@@ -47,7 +47,7 @@ describe('Types NOT covered by typeof', () => {
   });
 
   test('Test buffer', function () {
-    expect(typeOf(Buffer(43))).toStrictEqual('buffer');
+    expect(typeOf(Buffer.alloc(43))).toStrictEqual('buffer');
   });
 
   test('Test date', function () {
