@@ -83,13 +83,13 @@ typeOf(undefined);           //undefined
 ### Types that are NOT part of the native `typeof` function
 
 ```js
-typeOf(arguments);    //arguments
-typeOf([]);           //array
-typeOf(Buffer(43));   //buffer
-typeOf(new Date());   //date
-typeOf(NaN);          //NaN
-typeOf(null);         //null
-typeOf(/regex/);      //regex
+typeOf(arguments);          //arguments
+typeOf([]);                 //array
+typeOf(Buffer.alloc(43));   //buffer
+typeOf(new Date());         //date
+typeOf(NaN);                //NaN
+typeOf(null);               //null
+typeOf(/regex/);            //regex
 ```
 
 ### Custom types
