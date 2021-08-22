@@ -1,0 +1,7 @@
+*.test.js
+_*
+.*
+*.log
+*.md
+coverage
+reports
