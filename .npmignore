@@ -5,3 +5,5 @@ _*
 *.md
 coverage
 reports
+rollup.config.js
+stryker.conf.json
