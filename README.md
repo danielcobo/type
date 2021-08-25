@@ -3,18 +3,18 @@
 Bulletproof type checking for JavaScript. Think of it as an expanded version of the native [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) function. The module recognizes types that `typeof` does but also many more that `typeof` clunks together in a less useful way.
 
 ## 🧭 Table of contents
-- [🧭 Table of contents](#-table-of-contents)
-- [✨ Benefits](#-benefits)
-- [🎒 Requierments](#-requierments)
-- [🚀 Quickstart](#-quickstart)
-- [📘 Documentation](#-documentation)
-  - [Types that are part of the native `typeof` function](#types-that-are-part-of-the-native-typeof-function)
-  - [Types that are NOT part of the native `typeof` function](#types-that-are-not-part-of-the-native-typeof-function)
-  - [Custom types](#custom-types)
-- [🆘 Troubleshooting](#-troubleshooting)
-- [🤝 Contributing](#-contributing)
-- [🧪 Testing](#-testing)
-- [⚖️ License](#️-license)
+
+  - [✨ Benefits](#-benefits)
+  - [🎒 Requierments](#-requierments)
+  - [🚀 Quickstart](#-quickstart)
+  - [📘 Documentation](#-documentation)
+    - [Types that are part of the native `typeof` function](#types-that-are-part-of-the-native-typeof-function)
+    - [Types that are NOT part of the native `typeof` function](#types-that-are-not-part-of-the-native-typeof-function)
+    - [Custom types](#custom-types)
+  - [🆘 Troubleshooting](#-troubleshooting)
+  - [🤝 Contributing](#-contributing)
+  - [🧪 Testing](#-testing)
+  - [⚖️ License](#️-license)
 
 ## ✨ Benefits
 
@@ -29,20 +29,31 @@ There are no special prerequisites.
 
 ### Install
 
+__NodeJS:__
+
 ```cli
 npm install @danielcobo/type
 ```
 
-Or use [UNPKG](https://unpkg.com/) to include the script.
-The examples below will assume you use [npm](https://www.npmjs.com/)
+If you are using a __browser__ you can declare it as a global variable named `typeOf` by including this script before any script you want to use it in:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@danielcobo/type@1/dist/iife/typeof.min.js"></script>
+```
+
+Or you can import it inside your JS file as an [ECMAScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) module:
+
+```js
+import * as typeOf from 'https://cdn.jsdelivr.net/npm/@danielcobo/type@1/dist/esm/typeof.min.js';
+```
+
+Also, feel free to download the file if you prefer not to use [jsdelivr](https://www.jsdelivr.com). In that case just replace the url with the relative file path.
 
 <sub>**Note:** In case you're wondering, **@danielcobo/** is just a [namespace scope](https://docs.npmjs.com/about-scopes/) - an NPM feature. Scopes make it easier to name modules and improve [security](https://github.blog/2021-02-12-avoiding-npm-substitution-attacks/).</sub>
 
-### Use the module
+### Usage example
 
 ```js
-const typeOf = require('@danielcobo/type');
-
 const bestTimeToStart = new Date()
 typeOf(bestTimeToStart);  //date
 ```
