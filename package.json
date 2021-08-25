@@ -1,6 +1,6 @@
 {
   "name": "@danielcobo/type",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bulletproof type checking for JavaScript",
   "main": "./src/index.js",
   "scripts": {
