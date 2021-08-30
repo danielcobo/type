@@ -120,7 +120,7 @@ typeOf(metroplex); //robot
 
 ## 🆘 Troubleshooting
 
-If you run into trouble or have questions just [submit an issue](https://github.com/danielcobo/fs/issues).
+If you run into trouble or have questions just [submit an issue](https://github.com/danielcobo/type/issues).
 
 ## 🤝 Contributing
 
