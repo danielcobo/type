@@ -2,7 +2,7 @@
 _*
 .*
 *.log
-*.md
+README.md
 coverage
 reports
 rollup.config.js
